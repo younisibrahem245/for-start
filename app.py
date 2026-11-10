@@ -75,13 +75,24 @@ def board():
         ).fetchall()
 
 
-st.markdown("<style>.block-container{max-width:1050px;padding-top:2rem}h1,h2,h3,p{direction:rtl}.stCodeBlock{direction:ltr;text-align:left}</style>", unsafe_allow_html=True)
+st.markdown(
+    "<style>.block-container{max-width:1050px}</style>",
+    unsafe_allow_html=True
+)
+
 st.title("🐍 Python Escape Room")
 st.caption("خمس غرف • تحديات Python • منافسة جماعية")
-role = st.sidebar.radio("الدخول", ["🎮 الطلاب", "🏆 لوحة المعلمة"])
+
+role = st.sidebar.radio(
+    "الدخول",
+    ["🎮 الطلاب", "🏆 لوحة المعلمة"]
+)
 
 if role == "🏆 لوحة المعلمة":
-    pin = st.sidebar.text_input("رمز المعلمة", type="password")
+    pin = st.sidebar.text_input(
+        "رمز المعلمة",
+        type="password"
+    )
     if not hmac.compare_digest(pin, PIN):
         st.info("أدخلي رمز المعلمة لعرض النتائج.")
         st.stop()
