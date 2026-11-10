@@ -73,8 +73,8 @@ if 'identity' not in st.session_state:
         token = st.text_input('كلمة سر الفريق (4 أحرف على الأقل)', type='password')
         submit = st.form_submit_button('ابدأ / تابع المغامرة', use_container_width=True)
     if submit:
-    st.success("الزر اشتغل بنجاح!")
-    name = name.strip()
+       st.success("الزر اشتغل بنجاح!")
+       name = name.strip()
         if not name or len(token)<4:
             st.error('اكتبوا اسم الفريق وكلمة سر من 4 أحرف على الأقل.')
         else:
